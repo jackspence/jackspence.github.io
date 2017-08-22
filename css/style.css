@@ -1,0 +1,92 @@
+body {
+    color: #6F6F6F;
+    font-size: 16px;
+}
+.container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+h1.page-header {
+    font-size: 32px;
+    border-bottom: 2px solid #499D90;
+}
+h2.sub-heading {
+    font-size: 20px;
+    background-color: #499D90;
+    padding: 8px;
+    border-bottom: 4px solid #9ECFC7;    
+    color: #ffffff;
+}
+label {
+    color: #6F6F6F;
+    font-weight: normal;
+    font-size: 12px;    
+}
+.form-control {
+    border-radius: 0;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+.form-control:focus {    
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+.input-group-addon {
+    padding: 6px;
+    border-radius: 0;
+}
+table {
+    table-layout: fixed;
+}
+
+table thead th, table tbody td {
+    
+    vertical-align: middle;
+}
+.table > thead:first-child > tr:first-child > th {
+    font-size: 14px;
+    font-weight: normal;
+}
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    margin-top: 2px;
+}
+.help-block {
+    font-size: 12px;
+}
+.vnst {
+    font-size: 14px;
+}
+
+.btn {
+    padding: 12px 120px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0;
+    background-color: #39796F;
+    border: 0;
+}
+
+/**** Media Queries ****/
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+    
+}
+@media (min-width: 768px) {
+    .container {
+        width: 748px;
+    }
+    
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1195px;
+    }
+}
