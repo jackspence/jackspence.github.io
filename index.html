@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Express Approval Application</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+
+ <!-- Jack Spence -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+  <body>
+      <div class="container">
+            <div class="row">                
+                <div class="col-md-6">
+                    <h2>Vendor Information:</h2>
+                    <b>Dealership:</b> Northwest Bus Sales, Inc.<br/>
+                    <b>Address:</b> 33207 Pacific Hwy S<br/>
+                    Federal Way, WA 98003<br/>
+                    <b>Phone:</b> 800-231-7099 - Fax: 253-845-9384 <br/>
+                    
+                </div> 
+                <div class="col-md-offset-2 col-md-4"> 
+                <img src="pic/logo.png" alt="Logo" style="width:304px;height:228px;" >                 
+                </div>           
+            </div>
+      </div>
+      <hr/>
+      <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12"><h1 class="page-header">Equipment Financing Credit Application – Company to be Determined.</h1></div>    
+            </div>
+            <form action="posted.php" method="POST">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f1">COMPLETE LEGAL COMPANY NAME</label>
+                                <input type="text" class="form-control" id="f1" name="legal" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f2">DBA NAME (if applicable)</label>
+                                <input type="text" class="form-control" id="f2" name="dba">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="f3">BILLING ADDRESS</label>
+                                <input type="text" class="form-control" id="f3" name="billing" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f4">CITY</label>
+                                <input type="text" class="form-control" id="f4" name="billingcity" data-validation="required">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f5">STATE</label>
+                                <input type="text" class="form-control" id="f5" name="billingstate" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f6">ZIP</label>
+                                <input type="text" class="form-control" id="f6" name="zip" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="f7">PHYSICAL ADDRESS</label>
+                                <input type="text" class="form-control" id="f7" name= "physicaladdress" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f8">CITY</label>
+                                <input type="text" class="form-control" id="f8" name="physicalcity">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f9">STATE</label>
+                                <input type="text" class="form-control" id="f9" name="physicalstate">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f10">ZIP</label>
+                                <input type="text" class="form-control" id="f11" name="physicalzip">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="f12">EQUIPMENT LOCATION</label>
+                                <input type="text" class="form-control" id="f12" name="equipmentlocation">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f13">CITY</label>
+                                <input type="text" class="form-control" id="f13" name="equipmentcity">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f14">STATE</label>
+                                <input type="text" class="form-control" id="f14" name="equipmentstate">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f15">ZIP</label>
+                                <input type="text" class="form-control" id="f15" name="equipmentzip">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f16">COUNTRY</label>
+                                <input type="text" class="form-control" id="f16" name="Country" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f17">BUSINESS PHONE #</label>
+                                <input type="text" class="form-control" id="f17" name="BusinessPhone" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f18">BUSINESS FAX #</label>
+                                <input type="text" class="form-control" id="f18" name="Businessfax" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f19">CONTACT CELL #</label>
+                                <input type="text" class="form-control" id="f19" name="ContactCell">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f201">NATURE OF BUSINESS</label>
+                                  <input type="text" class="form-control"  id="f201" name="natureof" data-validation="required">
+                                                                                        <div id="conditionstatus1" class="form-inline">
+  <div class="form-group">
+    <input id="place1" type="hidden" name=condition1 class="form-control" readonly/>
+    <div class="radio-inline">
+      <label class="label_item" for="radioMale">
+        <input type="radio" class="radio_item" value="Sole Proprietor"  name="conditionstatus" id="radioMale">
+      </label>
+      <p class="text-center colorGrey">Sole Proprietor</p>
+     </div>
+    <div class="radio-inline">
+      <label class="label_item" for="radioFemale">
+        <input type="radio" class="radio_item" value="CORP"  name="conditionstatus1" id="radioFemale">
+      </label>
+      <p class="text-center colorGrey">CORP</p>
+    </div>
+     <div class="radio-inline">
+      <label class="label_item" for="radioFemale1">
+        <input type="radio" class="radio_item" value="Partnership"  name="conditionstatus1" id="radioFemale1">
+      </label>
+      <p class="text-center colorGrey">Partnership</p>
+    </div>
+     <div class="radio-inline">
+      <label class="label_item" for="radioFemale2">
+        <input type="radio" class="radio_item" value="L.L.C"  name="conditionstatus1" id="radioFemale2">
+      </label>
+      <p class="text-center colorGrey">L.L.C</p>
+    </div>
+     <div class="radio-inline">
+      <label class="label_item" for="radioFemale3">
+        <input type="radio" class="radio_item" value="Other"  name="conditionstatus1" id="radioFemale3">
+      </label>
+      <p class="text-center colorGrey">Other</p>
+    </div>
+  </div>
+</div>
+                                <label for="f222">LIST ALL STATES BUSINESS IS FORMED IN</label>
+                                <input type="text" class="form-control"  id="f222" name="allstates" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f20">FEDERAL ID #</label>
+                                <input type="text" class="form-control" id="f20" name="federalid" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f21">STATE/UBI #</label>
+                                <input type="text" class="form-control" id="f21" name="stateubi">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f22">BUSINESS START DATE</label>
+                                <input type="text" class="form-control" id="f22" name="businessstartdate" placeholder="yyyy-mm-dd" data-validation="date">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f23">CURRENT OWNERSHIP</label>
+                                <input type="text" class="form-control" id="f23" name="currentownership" placeholder="# yrs">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f24">EMAIL ADDRESS</label>
+                                <input type="email" class="form-control" id="f24" name="emailaddress" data-validation="email">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="f25">WEBSITE ADDRESS</label>
+                                <input type="text" class="form-control" id="f25" name="websiteaddress">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col-md-12 -->
+               
+            </div> <!-- Row, header -->
+
+            <div class="row">
+                <div class="col-md-12"><h2 class="sub-heading">OFFICERS/OWNERS/PARTNERS/MEMBERS GUARANTOR INFORMATION</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f26">NAME #1</label>
+                                <input type="text" class="form-control" id="f26" name="Name" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f27">TITLE</label>
+                                <input type="text" class="form-control" id="f27" name="title" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f28">% OWNED</label>
+                                <input type="text" class="form-control" id="f28" name="Owned" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f29">SSN</label>
+                                <input type="text" class="form-control" id="f29" name="SSN" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f30">HOME PHONE #</label>
+                                <input type="text" class="form-control" id="f30" name="homephone" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f301">DATE OF BIRTH</label>
+                                <input type="text" class="form-control" id="f301" name="dateofbirth" data-validation="date" placeholder="yyyy-mm-dd">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f31">STREET</label>
+                                <input type="text" class="form-control" id="f31" name="Street" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f32">CITY</label>
+                                <input type="text" class="form-control" id="f32" name="City" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f33">ST</label>
+                                <input type="text" class="form-control" id="f33" name="State" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f34">ZIP</label>
+                                <input type="text" class="form-control" id="f34" name="ZIP" data-validation="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Have you or your business filed bankruptcy in the past 10 years?</label>
+                                <input type="text" class="form-control" name="Bankruptcy" placeholder="When & What type?">
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div><!-- col-md-6 -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f35">NAME #2</label>
+                                <input type="text" class="form-control" id="f35" name="Name2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f36">TITLE</label>
+                                <input type="text" class="form-control" id="f36" name="Title2">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f37">% OWNED</label>
+                                <input type="text" class="form-control" id="f37" name="Owned2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f38">SSN</label>
+                                <input type="text" class="form-control" id="f38" name="SSN2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f39">HOME PHONE #</label>
+                                <input type="text" class="form-control" id="f39" name="homephone2">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f302">DATE OF BIRTH</label>
+                                <input type="text" class="form-control" id="f302" name="dateofbirth2" placeholder="yyyy-mm-dd">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f40">STREET</label>
+                                <input type="text" class="form-control" id="f40" name="Street2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f41">CITY</label>
+                                <input type="text" class="form-control" id="f41" name="City2">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f43">ST</label>
+                                <input type="text" class="form-control" id="f43" name="State2">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f44">ZIP</label>
+                                <input type="text" class="form-control" id="f44" name="ZIP2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Have you or your business filed bankruptcy in the past 10 years?</label>
+                                <input type="text" class="form-control" name="Bankruptcy2" placeholder="When & What type?">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div><!-- col-md-4 -->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f45">NAME #3</label>
+                                <input type="text" class="form-control" id="f45" name="Name3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f46">TITLE</label>
+                                <input type="text" class="form-control" id="f46" name="Title3">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f47">% OWNED</label>
+                                <input type="text" class="form-control" id="f47" name="Owned3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f48">SSN</label>
+                                <input type="text" class="form-control" id="f48" name="SSN3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f49">HOME PHONE #</label>
+                                <input type="text" class="form-control" id="f49" name="homephone3">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f303">DATE OF BIRTH</label>
+                                <input type="text" class="form-control" id="f303" name="dateofbirth3" placeholder="yyyy-mm-dd">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="f50">STREET</label>
+                                <input type="text" class="form-control" id="f50" name="Street3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f51">CITY</label>
+                                <input type="text" class="form-control" id="f51" name="City3">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f52">ST</label>
+                                <input type="text" class="form-control" id="f52" name="State3">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f53">ZIP</label>
+                                <input type="text" class="form-control" id="f53" name="ZIP3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Have you or your business filed bankruptcy in the past 10 years?</label>
+                                <input type="text" class="form-control" name="Bankruptcy3" placeholder="When & What type?">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div><!-- col-md-4 -->
+            </div> <!-- Row, Gurrenter -->
+
+            <div class="row">
+                <div class="col-md-12"><h2 class="sub-heading">BUSINESS CHECKING ACCOUNT REFERENCES</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f54">BANK NAME</label>
+                                <input type="text" class="form-control" id="f54" name="bankname" data-validation="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f55">ACCOUNT NUMBER</label>
+                                <input type="text" class="form-control" id="f55" name="accountnumber">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f56">CONTACT PERSON</label>
+                                <input type="text" class="form-control" id="f56" name="contactperson">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f57">BANK PHONE NUMBER</label>
+                                <input type="text" class="form-control" id="f57" name="bankphonenumber">
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div> <!-- Row, Business-->
+
+            <div class="row">
+                <div class="col-md-12"><h2 class="sub-heading">OTHER LEASE COMPANY OR LOAN REFERENCE</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f58">COMPANY NAME</label>
+                                <input type="text" class="form-control" id="f58" name="companyname">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f59">ACCOUNT NUMBER</label>
+                                <input type="text" class="form-control" id="f59" name="accountnumber2">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f60">CONTACT PERSON</label>
+                                <input type="text" class="form-control" id="f60" name="contactperson2">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="f61">PHONE NUMBER</label>
+                                <input type="text" class="form-control" id="f61" name="phonenumber2">
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div> <!-- Row, Lease company-->
+
+            <div class="row">
+                <div class="col-md-12"><h2 class="sub-heading">BUSINESS TRADE ACCOUNT REFERENCES</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered fninf">
+                        <thead>
+                            <tr>
+                                <th>COMPANY NAME</th>
+                                <th>PHONE #</th>
+                                <th>ACCOUNT #</th>
+                                <th>CONTACT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control" name="companyname2"></td>
+                                <td><input type="text" class="form-control" name="phoneno2"></td>
+                                <td><input type="text" class="form-control" name="accountno3"></td>
+                                <td><input type="text" class="form-control" name="Contact2"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" name="companyname3"></td>
+                                <td><input type="text" class="form-control" name="phoneno3"></td>
+                                <td><input type="text" class="form-control" name="accountno4"></td>
+                                <td><input type="text" class="form-control" name="Contact3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> <!-- Row, BUSINESS TRADE ACCOUNT -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="f62">LANDLORD NAME</label> 
+                        <input type="text" class="form-control" id="f62" name="landlordname"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="f63">CONTACT PERSON</label> 
+                        <input type="text" class="form-control" id="f63" name="contactperson4"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="f64">PHONE #</label> 
+                        <input type="text" class="form-control" id="f64" name="phoneno5">
+                    </div>
+                </div>
+            </div> <!-- Row, BUSINESS TRADE ACCOUNT -->
+            <div class="row">
+                <div class="col-md-12"><h2 class="sub-heading">EQUIPMENT TO BE LEASED AND VENDOR/SUPPLIER INFORMATION</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="f65">DESCRIPTION</label>
+                        <textarea class="form-control" id="f65" rows="4" name="Description1"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f66">QUANTITY</label>
+                                <input type="text" class="form-control" id="f66" name="Quantity">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="f67">MODEL #</label>
+                                <input type="text" class="form-control" id="f67" name="modelno1">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                                        <div id="conditionstatus" class="form-inline">
+  <div class="form-group">
+    <input id="place" type="hidden" name=condition class="form-control" readonly/>
+    <div class="radio-inline">
+      <label class="label_item" for="radioMale">
+        <input type="radio" class="radio_item" value="New"  name="conditionstatus" id="radioMale">
+      </label>
+      <p class="text-center colorGrey">New</p>
+     </div>
+    <div class="radio-inline">
+      <label class="label_item" for="radioFemale">
+        <input type="radio" class="radio_item" value="Used"  name="conditionstatus" id="radioFemale">
+      </label>
+      <p class="text-center colorGrey">Used</p>
+    </div>
+  </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f68">EQUIPMENT COST</label>
+                                <input type="text" class="form-control" id="f68" name="equipmentcost" placeholder="USD">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="f69">LEASE TERM REQUESTED</label>
+                                <input type="text" class="form-control" id="f69" name="leasetermrequested">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="equ['Vendor Sale']" value="Vendor Sale" checked > VENDOR/DEALER SALE       
+                                    </label>                             
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="equ['Private party sale']" value="Private Party Sale" disabled> PRIVATE PARTY SALE
+                                    </label>                             
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="equ['Line of credit']" value="Line of credit" disabled> LINE OF CREDIT
+                                    </label>                             
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="equ['Other']" value="Other" disabled> OTHER
+                                    </label>                             
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- row -->
+                </div> 
+
+                <div class="col-md-12">
+                    <div class="row vnst">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <b>VENDOR NAME:</b> <br/>Northwest Bus Sales
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <b>SALESMAN:</b> <input type="text" class="form-control" name="salesman"> 
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <b>PHONE #:</b>  <br/> 1-800-231-7099
+                            </div>
+                        </div>
+                    </div> <!-- row -->
+                </div>
+                
+
+            </div><!-- Row, EQUIPMENT TO BE LEASED -->
+
+            
+            <div class="row">
+                <div class="col-sm-12">
+                        Each of the above listed guarantors is/are willing to serve as guarantor of the above transaction.  Each of the undersigned on his or her behalf and on behalf of any such party not signing, whom the undersigned represents has given the undersigned authority to sign on his or her behalf, authorize(s) Northwest Bus Sales, Inc. and its nominees to obtain, and all such parties to release, credit and financial information (personal or business) requested by Northwest Bus Sales, Inc. or its nominees and for such parties to provide information to others regarding their relations with the undersigned and each such other guarantor.  I/we completed this application to obtain credit for the applicant and certify that all statements contained herein are true and correct.
+                        I understand that an electronic signature has the same legal effect and can be enforced in the same way as a written signature.
+                    <br/><br/>
+                </div>
+            </div><!-- Row -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f70">Signature</label>
+                        <input type="text" class="form-control" id="f70" name="signature" data-validation="required">
+                    </div> 
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f71">Date</label>
+                        <input type="text" class="form-control" id="f71" name="Date4" data-validation="date" placeholder="yyyy-mm-dd">
+                    </div> 
+                </div>
+              
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f73">Title</label>
+                        <input type="text" class="form-control" id="f73" name="Title">
+                    </div> 
+                </div>
+            </div><!-- row -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f74">Signature</label>
+                        <input type="text" class="form-control" id="f74" name="signature1">
+                    </div> 
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f75">Date</label>
+                        <input type="text" class="form-control" id="f75" name="Date1" placeholder="yyyy-mm-dd">
+                    </div> 
+                </div>
+            
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label for="f77">Title</label>
+                        <input type="text" class="form-control" id="f77" name="Title">
+                    </div> 
+                </div>
+            </div><!-- row -->
+            <div class="row">
+                <div class="col-sm-12">
+                        <div class="g-recaptcha" data-sitekey="6LdgFy0UAAAAALVCuw1ZyCJFkdGdSfTtMJWIaFyR"></div>
+                        <div style="color: #ff0000;" id="HRC"></div
+                </div>
+            </div>
+			<p>
+				By verifying my identity above I understand that an electronic signature has the same legal effect and can be enforced in the same way as a written signature.
+			</p>
+            <div class="row">
+                <div class="col-md-12"><br/><input type="submit" name="submitbtn" class="btn btn-primary btn-lg" value="Submit"></div>
+            </div>
+            </form>            
+
+      </div> <!-- Container -->
+      <br/>
+      <br/>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> 
+    <!-- Bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $.validate({
+            validateOnBlur : false,
+            modules : 'date'
+        });
+		$("form").submit(function(event) {
+
+   var recaptcha = $("#g-recaptcha-response").val();
+   if (recaptcha === "") {
+      event.preventDefault();
+	   document.getElementById("HRC").innerHTML = "Please check the recaptcha";
+   }
+});
+    </script>
+    <script>
+$('#conditionstatus input').on('change', function yesss() {
+	var conditionstatus = $( this ).val();
+   $("#place").val( conditionstatus );
+});
+$('#conditionstatus1 input').on('change', function yes() {
+	var conditionstatus1 = $( this ).val();
+   $("#place1").val( conditionstatus1 );
+});		
+    </script>
+  </body>
+</html>
